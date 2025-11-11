@@ -1,0 +1,139 @@
+/* Styles for esqueci_senha1 page - based on login_style.css to keep consistent look */
+body{
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	display: flex;
+	justify-content: center;
+	background-image:url(/login_imagens/background_tayta.jpeg);
+	background-size:cover;    
+}
+
+.main-container{
+	max-width: 1280px;
+	width: 50vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20vh;
+	align-items: center;
+	background-color: transparent;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	align-items: center;
+	font-family: "Roboto", sans-serif;
+}
+
+section img{
+	width: 60%;
+}
+
+.formulario{
+	display: flex;
+	width: 60%;
+	flex-direction: column;
+	margin-top: 40px;
+}
+
+.formulario h2{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+}
+
+.formulario p{
+    margin-top: 20px;
+    color:rgba(255,255,255,0.9); 
+    text-align:center; 
+    max-width:520px;
+    font-size: 20px;
+}
+
+.usuario{
+    margin-top: 30px;
+}
+
+.usuario, .senha{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.usuario label, .senha label{
+	color: white;
+	font-size: 22px;
+}
+
+.usuario input, .senha input{
+	width: 100%;
+	margin-top: 8px;
+	height: 50px;
+	border-radius: 8px;
+	font-size: 16px;
+	padding: 0 12px;
+}
+
+.submit-button{
+	width: 100%;
+}
+
+.submit-button button{
+	margin-top: 30px;
+	width: 50%;
+	margin-left: 25%;
+	height:50px;
+	border-radius: 9999px;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	background-color: #0084FF;
+	color: white;
+}
+
+.submit-button button:hover{
+	border: solid 4px white;
+}
+
+.links{
+	width: 100%;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.links a{
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+}
+
+
+.voltar_button{
+	width: 50%;
+	height: 50px;
+	border-radius: 9999px;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	background-color: #0084FF;
+	color: white;
+}
+
+.voltar_button:hover{
+	border: solid 4px white;
+}
+
+@media (max-width:720px){
+  .main-container{ width:90vw; margin-top:8vh }
+  .formulario{ width: 100% }
+  section{ width: 100% }
+  .submit-button button{ width: 80%; margin-left:10% }
+}
+

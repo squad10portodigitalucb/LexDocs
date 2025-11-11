@@ -125,28 +125,26 @@ section{
     border: solid 4px white;
 }
 
-.voltar-button button{
+.voltar-button .btn-voltar{
+    display: inline-block;
     margin-top: 30px;
     width: 30%;
     margin-left: 35%;
     height:50px;
+    line-height:50px;
     border-radius: 9999px;
     font-size: 22px;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     border: none;
     background-color: #0084FF;
     color: white;
 }
 
-.voltar-button button:hover{
+.voltar-button .btn-voltar:hover{
     border: solid 4px white;
-}
-
-.voltar-button button a{
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
 }
 
 /* Small responsive tweak for cadastro page */
@@ -155,4 +153,5 @@ section{
   .formulario{ width: 100% }
   section{ width: 100% }
   .submit-button button{ width: 80%; margin-left:10% }
+    .voltar-button .btn-voltar{ width: 80%; margin-left:10%; margin-right:10% }
 }
