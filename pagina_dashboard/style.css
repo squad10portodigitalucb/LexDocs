@@ -94,11 +94,17 @@
 .lista_footer i{ width: 20px; text-align: center; }
 
 /*----------------Conteúdo central-------------------------------------------------*/
+.col-md-7{
+    margin: 0;
+    padding: 0;
+}
+
 .content{
     background: var(--surface);
     min-height: 100vh;
     border-left: 1px solid var(--border);
     padding-bottom: 24px;
+    
 }
 .header-bar{
     background: var(--surface-2);
@@ -156,6 +162,11 @@
 .recent-table .table-row{ height: 52px; border-top: 1px solid #E1E6EA; background: #fff; }
 
 /*--------------------Painel direito-----------------------------------------------------------------*/
+.col-md-3{
+    margin: 0;
+    padding: 0;
+}
+
 .aside{ background: var(--surface); 
     min-height: 100vh; 
     border-left: 1px solid var(--border); 
