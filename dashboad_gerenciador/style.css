@@ -1,0 +1,150 @@
+/*---------------------Estilização da sidebar navigation----------------*/
+.col-md-2{
+    background-color: #000343;
+    color: #D9D9D9;
+    font-size: 22px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.col-md-2 img{
+    width: 250px;
+    height: 150px;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+.col-md-2 a{
+    text-decoration: none;
+    color: #D9D9D9;
+    margin-left: 8px;
+    line-height: 2;
+}
+
+.col-md-2 a:hover{
+    text-decoration: underline;
+    text-decoration-color: #D9D9D9;
+    text-decoration-thickness: 2px;
+}
+
+.caixa_de_navegacao{
+    margin-top: 100px;
+}
+
+.caixa_footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 15px;
+}
+
+/* =================== Layout principal / Dashboard =================== */
+:root{
+    --sidebar-bg: #000343;
+    --sidebar-fg: #D9D9D9;
+
+    --surface: #DCE3E8;      /* fundo principal */
+    --surface-2: #CFD6DB;    /* top bar */
+    --border: #B6BDC3;
+    --muted: #6A7580;
+
+    --green-soft: #BBD5BF;
+    --blue-soft:  #8FB4D2;
+    --red-soft:   #D99A9A;
+
+    --blue:   #4D7BD6;
+    --cyan:   #36B6D9;
+    --navy:   #3555A6;
+    --indigo: #5770C6;
+
+    --blue-gray:  #748ca0;
+    --blue-soft:  #8FB4D2;
+    --blue-light: #9bc5e7;
+    --blue-dark:  #3d4658;
+    --navy-light:  #6990b1;
+    --indigo-dark:#484b5f;
+}
+
+/* Listas da sidebar (sem divs dentro de ul) */
+.lista_de_navegacao,
+.lista_footer{
+    list-style: none;
+    padding: 0 12px;
+    margin: 09;
+}
+.lista_de_navegacao li + li,
+.lista_footer li + li{ margin-top: 8px; }
+
+.lista_de_navegacao a,
+.lista_footer a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sidebar-fg);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+.lista_de_navegacao a:hover,
+.lista_footer a:hover{
+    background: rgba(255,255,255,.08);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+/*.lista_de_navegacao a.is-active{
+    background: rgba(255,255,255,.16);
+    color: #fff;
+}*/
+.lista_de_navegacao i,
+.lista_footer i{ width: 20px; text-align: center; }
+
+/*----------------Conteúdo central-------------------------------------------------*/
+.content{
+    background: var(--surface);
+    min-height: 100vh;
+    min-width: 82vw;
+    border-left: 1px solid var(--border);
+    padding-bottom: 24px;
+}
+.header-bar{
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+}
+.page-title{ font-size: 22px; margin: 0; }
+
+/* Busca + usuário */
+.search-box{ position: relative; }
+.search-box input{
+    padding-right: 28px;
+    min-width: 220px;
+    background: #E7ECF0;
+    border-color: var(--border);
+}
+.search-box i{
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    color: var(--muted); font-size: 20px;
+}
+.avatar{ width: 36px; height: 36px; border-radius: 50%; }
+.avatar i {font-size: 34px;}
+.user-name{ color: #111; }
+
+/* Seções */
+.section-block{ padding: 20px 20px; }
+.section-title{ font-size: 24px; margin: 0 0 35px 0; }
+
+/* -------Arquivos------- */
+.card-quick{
+    display: flex; align-items:normal ; justify-content: left;
+    height: 270px; border-radius: 14px; color: #111; font-weight: 600;
+    text-decoration: none; padding: 10px 30px 10px 60px;
+}
+
+.card-quick.financeiro{ background: var(--blue-gray); }
+.card-quick.processos{  background: var(--blue-soft); }
+.card-quick.clientes{   background: var(--blue-light); }
+.card-quick.gorvenamental{ background: var(--blue-dark); }
+.card-quick.movimentacoes-internas{  background: var(--navy-light); }
+.card-quick.redes-sociais{   background: var(--indigo-dark); }

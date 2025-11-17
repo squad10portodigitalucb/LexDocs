@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexDocs - Perfil de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #c9cbd4;
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 190px;
+            background-color: #1a2157;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 100px;
+            margin-bottom: 40px;
+        }
+
+        .menu-item {
+            color: #a8aec2;
+            padding: 12px 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .menu-item svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .config-btn {
+            margin-top: auto;
+            margin-bottom: 15px;
+            background-color: #4a5578;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .config-btn:hover {
+            background-color: #5a6588;
+        }
+
+        .disconnect-btn {
+            background-color: transparent;
+            color: #a8aec2;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .disconnect-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .header {
+            background-color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            color: #6b7194;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .header-center {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7194' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat right 12px center;
+        }
+
+        .user-menu {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .profile-menu {
+            background-color: #c4c6d3;
+            width: 200px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .profile-menu-title {
+            font-weight: 600;
+            color: #1a2157;
+            padding: 10px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .profile-menu-item {
+            padding: 10px;
+            color: #2d3748;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .profile-menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .profile-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .avatar-container {
+            position: relative;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar svg {
+            width: 50px;
+            height: 50px;
+            fill: white;
+        }
+
+        .camera-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #1a2157;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 3px solid white;
+        }
+
+        .camera-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .profile-info h2 {
+            color: #1a2157;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .profile-tabs {
+            display: flex;
+            gap: 15px;
+        }
+
+        .tab-btn {
+            padding: 8px 20px;
+            border: 1px solid #1a2157;
+            background-color: #1a2157;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.outline {
+            background-color: white;
+            color: #1a2157;
+        }
+
+        .tab-btn:hover {
+            opacity: 0.9;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #4a5568;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            padding: 12px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #f5f5f7;
+            color: #9ca3af;
+        }
+
+        .form-group input::placeholder {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+            <div class="d-none d-md-block col-md-2">
+                <img src="LogoFundoTrasnparente.png" alt="logo lex docs">
+
+                <div class="caixa_de_navegacao">
+                    <ul class="lista_de_navegacao">
+                        <li><a href="../index.html" class="is-active"><i class="fa-regular fa-folder" aria-hidden="true"></i> <span>Arquivos</span></a></li>
+                        <li><a href="dashboard_time/dashboard-time.html"><i class="fa-solid fa-people-group" aria-hidden="true"></i> <span>Equipe</span></a></li>
+                        <li><a href="dashboard_gerenciador/index.html"><i class="fa-solid fa-box-archive" aria-hidden="true"></i> <span>Gerenciador</span></a></li>
+                        <li><a href="../dashboard_relatorio/dashboard-relatorio.html"><i class="fa-regular fa-file" aria-hidden="true"></i> <span>Relatórios</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="caixa_footer">
+                    <ul class="lista_footer">
+                        <li><a href="#"><i class="fa-solid fa-gear" aria-hidden="true"></i> <span>Configurações</span></a></li>
+                        <li><a href="../dashboard_desconectar/index.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i> <span>Desconectar</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="header-left">Voltar</div>
+            <div class="header-center">
+                <input type="text" class="search-box" placeholder="Pesquisa">
+            </div>
+            <div class="user-menu">
+                Olá, Usuário 
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="profile-menu">
+                <div class="profile-menu-title">Perfil de Usuário</div>
+                <div class="profile-menu-item">Login e Senha</div>
+                <div class="profile-menu-item">Notificações</div>
+                <div class="profile-menu-item">Idioma</div>
+                <div class="profile-menu-item">Tema</div>
+                <div class="profile-menu-item">Ajuda</div>
+                <div class="profile-menu-item">Acessibilidade</div>
+                <div class="profile-menu-item">FAQ</div>
+                <div class="profile-menu-item">Sair</div>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <div class="avatar">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <div class="camera-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 15.2c-2.28 0-4.2-1.92-4.2-4.2s1.92-4.2 4.2-4.2 4.2 1.92 4.2 4.2-1.92 4.2-4.2 4.2zM9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9z"/></svg>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2>Usuário Teste</h2>
+                        <div class="profile-tabs">
+                            <button class="tab-btn">Conseguir data</button>
+                            <button class="tab-btn outline">Trocar perfil</button>
+                            <button class="tab-btn outline">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" placeholder="Primeiro Nome" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Nome Completo" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Gênero</label>
+                        <input type="text" placeholder="Gênero do usuário" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Nacionalidade</label>
+                        <input type="text" placeholder="Nacionalidade do usuário" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="text" placeholder="Número de telefone" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

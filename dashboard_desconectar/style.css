@@ -1,0 +1,86 @@
+
+/* =================== Layout principal =================== */
+:root{
+    --sidebar-bg: #000343;
+    --sidebar-fg: #D9D9D9;
+
+    --surface: #DCE3E8;      /* fundo principal */
+    --surface-2: #CFD6DB;    /* top bar */
+    --border: #B6BDC3;
+    --muted: #6A7580;
+
+    --green-soft: #BBD5BF;
+    --blue-soft:  #8FB4D2;
+    --red-soft:   #D99A9A;
+
+    --blue:   #4D7BD6;
+    --cyan:   #36B6D9;
+    --navy:   #3555A6;
+    --indigo: #5770C6;
+}
+
+body{
+     margin: 0;
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    margin: auto;
+    padding: 0;
+    height: 90vh;
+    
+}
+
+.acesso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: auto;
+    margin: auto auto;
+    padding: 20px;
+    border: 3px solid var(--sidebar-bg);
+    text-align: center;
+    border-radius: 8px;
+}
+
+ h2{
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--sidebar-bg);
+    padding: 15px;
+}
+
+button{
+    background-color: #000343;
+    color: var(--surface);
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 9999px;
+    font-weight: bold;
+    align-self: center;
+    margin-top: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+footer{
+    background: #000343;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p{
+    padding: 10px;
+    font-size: 16px;
+}

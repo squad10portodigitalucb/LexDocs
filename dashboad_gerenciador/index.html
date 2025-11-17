@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Geerenciador</title>
+
+    <!--Folhas de estilos-->
+    <link rel="stylesheet" href="reset.css">
+
+    <!--CDN Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Estilos locais (depois do Bootstrap para sobrescrever classes se necessário) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CDN Font Awesome -->
+    <script src="https://kit.fontawesome.com/fa86e23414.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!--Body Container divisão em colunas (2-7-3)-->
+    <div class="body-container">
+        <div class="row">
+
+            <!--Sidebar navigation-->
+            <div class="d-none d-md-block col-md-2">
+                <img src="imagens/LexLogo.png" alt="logo lex docs">
+
+                <div class="caixa_de_navegacao">
+                    <ul class="lista_de_navegacao">
+                        <li><a href="../index.html" class="is-active"><i class="fa-regular fa-folder" aria-hidden="true"></i>
+                                <span>Arquivos</span></a></li>
+                        <li><a href="../dashboad_time/dashboard-time.html"><i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                                <span>Equipe</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+                                <span>Gerenciador</span></a></li>
+                        <li><a href="../dashboard_relatorio/dashboard-relatorio.html"><i class="fa-regular fa-file" aria-hidden="true"></i>
+                                <span>Relatórios</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="caixa_footer">
+                    <ul class="lista_footer">
+                        <li><a href="../dashboad_configuracao/index.html"><i class="fa-solid fa-gear" aria-hidden="true"></i>
+                                <span>Configurações</span></a></li>
+                        <li><a href="../dashboard_desconectar/index.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                                <span>Desconectar</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Main-->
+             <!--Barra de Pesquisa -->
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <div class="header-bar d-flex align-items-center justify-content-between">
+                        <h1 class="page-title">Gerenciador de Arquivos</h1>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="search-box">
+                                <input type="text" class="form-control form-control-sm" placeholder="Pesquisa"
+                                    aria-label="Pesquisar">
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </div>
+                            <div class="user-info d-flex align-items-center gap-2">
+                                <div class="avatar"><i class="fa-regular fa-circle-user"></i></div>
+                                <span class="user-name">Olá, Usuário</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arquivos -->
+                    <section class="quick-access section-block">
+                        <div class="row g-5">
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick financeiro"><span><h4>Financeiro</h4></span></a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick processos"><span><h4>Processos</h4></span></a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick clientes"><span><h4>Clientes</h4></span></a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick gorvenamental"><span><h4>Gorvenamental</h4></span></a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick movimentacoes-internas"><span><h4>Movimentações internas</h4></span></a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="#" class="card-quick redes-sociais"><span><h4>Redes sociais</h4></span></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
