@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Gerenciador</title>
+
+    <!-- Base compartilhada (reset, variáveis, sidebar) -->
+    <link rel="stylesheet" href="Css/base.css">
+
+    <!-- Reset/ajustes específicos do gerenciador (se necessário) -->
+    <link rel="stylesheet" href="Css/gerenciadorreset.css">
+
+    <!-- Estilos locais do gerenciador -->
+    <link rel="stylesheet" href="Css/gerenciadorstyle.css">
+
+    <!--CDN Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- CDN Font Awesome -->
+    <script src="https://kit.fontawesome.com/fa86e23414.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!--Body Container divisão em colunas (2-7-3)-->
+    <div class="body-container">
+        <div class="row">
+
+            <!--Sidebar navigation-->
+            <div class="d-none d-md-block col-md-2">
+                <img src="imagens/LexLogo.png" alt="logo lex docs">
+
+                <div class="caixa_de_navegacao">
+                    <ul class="lista_de_navegacao">
+                        <li><a href="index.html" class="is-active"><i class="fa-regular fa-folder" aria-hidden="true"></i>
+                                <span>Arquivos</span></a></li>
+                        <li><a href="time.html"><i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                                <span>Equipe</span></a></li>
+                        <li><a href="gerenciador.html"><i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+                                <span>Gerenciador</span></a></li>
+                        <li><a href="relatorio.html"><i class="fa-regular fa-file" aria-hidden="true"></i>
+                                <span>Relatórios</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="caixa_footer">
+                    <ul class="lista_footer">
+                        <li><a href="configuracao.html"><i class="fa-solid fa-gear" aria-hidden="true"></i>
+                                <span>Configurações</span></a></li>
+                        <li><a href="desconectar.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                                <span>Desconectar</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Main-->
+             <!--Barra de Pesquisa -->
+            <main class="col-12 col-md-7">
+                <div class="content">
+                    <div class="header-bar d-flex align-items-center justify-content-between">
+                        <h1 class="page-title">Gerenciador de Arquivos</h1>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="search-box">
+                                <input type="text" class="form-control form-control-sm" placeholder="Pesquisa"
+                                    aria-label="Pesquisar">
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </div>
+                            <div class="user-info d-flex align-items-center gap-2">
+                                <div class="avatar"><i class="fa-regular fa-circle-user"></i></div>
+                                <span class="user-name">Olá, Usuário</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arquivos -->
+                    <section class="quick-access section-block" aria-label="Categorias de arquivos">
+                        <div class="row g-5">
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick financeiro" data-card-popup="Financeiro" aria-label="Abrir pasta Financeiro">
+                                    <h4>Financeiro</h4>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick processos" data-card-popup="Processos" aria-label="Abrir pasta Processos">
+                                    <h4>Processos</h4>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick clientes" data-card-popup="Clientes" aria-label="Abrir pasta Clientes">
+                                    <h4>Clientes</h4>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick governamental" data-card-popup="Governamental" aria-label="Abrir pasta Governamental">
+                                    <h4>Governamental</h4>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick movimentacoes-internas" data-card-popup="Movimentações internas" aria-label="Abrir pasta Movimentações internas">
+                                    <h4>Movimentações internas</h4>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button type="button" class="card-quick redes-sociais" data-card-popup="Redes sociais" aria-label="Abrir pasta Redes sociais">
+                                    <h4>Redes sociais</h4>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Arquivos (mesma estrutura usada no index) -->
+    <div class="upload-modal" id="gerenciadorModal" aria-hidden="true">
+        <div class="upload-modal-backdrop" data-close-modal></div>
+        <div class="upload-modal-content" role="dialog" aria-modal="true" aria-labelledby="gerenciadorModalTitle">
+            <div class="upload-modal-header">
+                <h2 id="gerenciadorModalTitle">Pasta</h2>
+                <button type="button" class="upload-modal-close" data-close-modal aria-label="Fechar">
+                    &times;
+                </button>
+            </div>
+
+            <div class="upload-modal-table">
+                <div class="upload-modal-table-head upload-modal-table-head-full">
+                    <div>Nome</div>
+                    <div>Tipo</div>
+                    <div>Data de modificação</div>
+                    <div>Cliente</div>
+                    <div>Sensibilidade</div>
+                </div>
+                <div class="upload-modal-table-body upload-modal-table-body-full">
+                    <div class="upload-modal-row file-row">
+                        <span>Recurso_Tribunal_2025-11-15.docx</span>
+                        <span>Documento</span>
+                        <span>15/11/2025 10:32</span>
+                        <span>Cliente 2</span>
+                        <span>Alta</span>
+                    </div>
+                    <div class="upload-modal-row file-row">
+                        <span>Contrato_Prestacao_Servicos.pdf</span>
+                        <span>PDF</span>
+                        <span>10/11/2025 09:20</span>
+                        <span>Cliente 1</span>
+                        <span>Média</span>
+                    </div>
+                    <div class="upload-modal-row file-row">
+                        <span>Planilha_Financeiro_Outubro.xlsx</span>
+                        <span>Planilha</span>
+                        <span>02/11/2025 16:01</span>
+                        <span>Cliente 3</span>
+                        <span>Alta</span>
+                    </div>
+                    <div class="upload-modal-row file-row">
+                        <span>Peticao_Inicial_000123-45.pdf</span>
+                        <span>PDF</span>
+                        <span>25/10/2025 11:47</span>
+                        <span>Cliente 4</span>
+                        <span>Baixa</span>
+                    </div>
+                    <div class="upload-modal-row placeholder"></div>
+                    <div class="upload-modal-row placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('gerenciadorModal');
+            const modalContent = modal ? modal.querySelector('.upload-modal-content') : null;
+            const modalTitle = document.getElementById('gerenciadorModalTitle');
+            if (!modal || !modalContent || !modalTitle) return;
+
+            const openModal = () => {
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+            };
+
+            const setAppearanceFromCard = (card) => {
+                const label = card.dataset.cardPopup || card.textContent.trim();
+                modalTitle.textContent = label;
+
+                modalContent.style.background = getComputedStyle(card).backgroundColor;
+            };
+
+            document.querySelectorAll('[data-card-popup]').forEach((card) => {
+                card.addEventListener('click', () => {
+                    setAppearanceFromCard(card);
+                    openModal();
+                });
+            });
+
+            modal.querySelectorAll('[data-close-modal]').forEach((el) => {
+                el.addEventListener('click', closeModal);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

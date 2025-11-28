@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!--Folhas de estilos-->
+    <link rel="stylesheet" href="Css/reset.css">
+
+    <!--CDN Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Estilos locais (depois do Bootstrap para sobrescrever classes se necessário) -->
+    <link rel="stylesheet" href="Css/style.css">
+
+    <!-- CDN Font Awesome -->
+    <script src="https://kit.fontawesome.com/fa86e23414.js" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    <!--Body Container divisão em colunas (2-7-3)-->
+    <div class="body-container">
+        <div class="row">
+
+            <!--Sidebar navigation-->
+            <div class="d-none d-md-block col-md-2">
+                <img src="imagens/LexLogo.png" alt="logo lex docs">
+
+                <div class="caixa_de_navegacao">
+                    <ul class="lista_de_navegacao">
+                        <li><a href="#" class="is-active"><i class="fa-regular fa-folder" aria-hidden="true"></i> <span>Arquivos</span></a></li>
+                        <li><a href="/time.html"><i class="fa-solid fa-people-group" aria-hidden="true"></i> <span>Equipe</span></a></li>
+                        <li><a href="/gerenciador.html"><i class="fa-solid fa-box-archive" aria-hidden="true"></i> <span>Gerenciador</span></a></li>
+                        <li><a href="/relatorio.html"><i class="fa-regular fa-file" aria-hidden="true"></i> <span>Relatórios</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="caixa_footer">
+                    <ul class="lista_footer">
+                        <li><a class="config" href="/configuracao.html"><i class="fa-solid fa-gear" aria-hidden="true"></i> <span>Configurações</span></a></li>
+                        <li><a href="/desconectar.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i> <span>Desconectar</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-7">
+                <div class="content">
+                    <div class="header-bar d-flex align-items-center justify-content-between">
+                        <h1 class="page-title">Todos os Arquivos</h1>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="search-box">
+                                <input type="text" class="form-control form-control-sm" placeholder="Pesquisa" aria-label="Pesquisar">
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </div>
+                            <div class="user-info d-flex align-items-center gap-2">
+                                <div class="avatar"><i class="fa-regular fa-circle-user"></i></div>
+                                <span class="user-name">Olá, Usuário</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="quick-access section-block">
+                        <h2 class="section-title">Acesso rápido</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-4">
+                                <button type="button" class="card-quick financeiro" data-card-popup="Financeiro"><span>Financeiro</span></button>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <button type="button" class="card-quick processos" data-card-popup="Processos"><span>Processos</span></button>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <button type="button" class="card-quick clientes" data-card-popup="Clientes"><span>Clientes</span></button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="upload-area section-block">
+                        <div class="upload-box">
+                            <i class="fa-solid fa-upload" aria-hidden="true"></i>
+                            <p>Fazer Upload</p>
+                        </div>
+                    </section>
+
+                    <!-- Modal de Upload / Cards -->
+                    <div class="upload-modal" id="uploadModal" aria-hidden="true">
+                        <div class="upload-modal-backdrop" data-close-modal></div>
+                        <div class="upload-modal-content" role="dialog" aria-modal="true" aria-labelledby="uploadModalTitle">
+                            <div class="upload-modal-header">
+                                <h2 id="uploadModalTitle">Upload</h2>
+                                <button type="button" class="upload-modal-close" data-close-modal aria-label="Fechar">
+                                    &times;
+                                </button>
+                            </div>
+
+                            <div class="upload-modal-table">
+                                <div class="upload-modal-table-head">
+                                    <div>Nome</div>
+                                    <div>Tamanho</div>
+                                    <div>Tipo</div>
+                                </div>
+                                <div class="upload-modal-table-body">
+                                    <div class="upload-modal-row placeholder"></div>
+                                    <div class="upload-modal-row placeholder"></div>
+                                    <div class="upload-modal-row placeholder"></div>
+                                    <div class="upload-modal-row file-row-upload">
+                                        <div>
+                                            contrato-exemplo.pdf
+                                            <div class="upload-file-tags" id="fileTags"></div>
+                                        </div>
+                                        <div>1,2 MB</div>
+                                        <div>PDF</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="upload-modal-filters">
+                                <div class="upload-column">
+                                    <div class="upload-search">
+                                        <input type="text" placeholder="Pesquisa">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="upload-tags">
+                                        <span class="tag tag-green">Governo</span>
+                                        <span class="tag tag-purple">LGPD</span>
+                                    </div>
+                                    <ul class="upload-list">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+
+                                <div class="upload-column">
+                                    <div class="upload-search">
+                                        <input type="text" placeholder="Pesquisa">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="upload-tags">
+                                        <span class="tag tag-yellow">Processo</span>
+                                        <span class="tag tag-red">Financeiro</span>
+                                    </div>
+                                    <ul class="upload-list">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+
+                                <div class="upload-column">
+                                    <div class="upload-search">
+                                        <input type="text" placeholder="Pesquisa">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <ul class="upload-radios">
+                                        <li>
+                                            <span class="cliente-tag">Cliente 1</span>
+                                        </li>
+                                        <li>
+                                            <span class="cliente-tag">Cliente 2</span>
+                                        </li>
+                                        <li>
+                                            <span class="cliente-tag">Cliente 3</span>
+                                        </li>
+                                    </ul>
+
+                                    <button class="btn-enviar-redacao" type="button">Enviar para redação</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="recent-activities section-block">
+                        <h2 class="section-title">Atividades recentes</h2>
+                        <div class="recent-table">
+                            <div class="table-head">
+                                <div>Nome do arquivo</div>
+                                <div>Data</div>
+                                <div>Acessos</div>
+                                <div>Tamanho</div>
+                            </div>
+                            <div class="table-row"></div>
+                            <div class="table-row"></div>
+                            <div class="table-row"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            
+            <div class="d-none d-md-block col-md-3">
+                <aside class="aside">
+                    <section class="section-block">
+                        <h2 class="section-title">Atividade</h2>
+                        <ul class="activity-list">
+                            <li><span class="dot"></span><div><div class="muted">data</div><div>Usuário criou um arquivo</div></div></li>
+                            <li><span class="dot"></span><div><div class="muted">data</div><div>Usuário renomeou um item</div></div></li>
+                            <li><span class="dot"></span><div><div class="muted">data</div><div>Usuário adicionou um cliente</div></div></li>
+                            <li><span class="dot"></span><div><div class="muted">data</div><div>Usuário editou um item</div></div></li>
+                        </ul>
+                    </section>
+
+                    <section class="section-block">
+                        <h2 class="section-title">Em Andamento</h2>
+                        <ul class="legend">
+                            <li><span class="badge badge-blue"></span> Redação</li>
+                            <li><span class="badge badge-cyan"></span> Petições</li>
+                            <li><span class="badge badge-navy"></span> Financeiro</li>
+                            <li><span class="badge badge-indigo"></span> Recursos</li>
+                        </ul>
+                        
+                    </section>
+
+                    <section class="grafico">
+                        
+                        <div class="grafico_imagem">
+                            <img src="/imagens/grafico_dasboard.png" alt="grafico de tarefas">
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <script src="Js/dashboard-index.js"></script>
+
+</body>
+</html>

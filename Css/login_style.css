@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image:url(/imagens/background_tayta.jpeg);
+    background-size:cover;    
+}
+
+.main-container{
+    max-width: 1280px;
+    width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    align-items: center;
+    background-color: transparent;
+   
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+section img{
+    width: 60%;
+}
+
+.formulario{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.usuario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.usuario label{
+    color: white;
+    font-size: 30px;
+}
+
+.usuario input{
+    width: 100%;
+    margin-top: 8px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.senha{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.senha label{
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.senha input{
+    width: 100%;
+    margin-top: 8px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.submit-button{
+    width: 100%;
+}
+
+.submit-button button{
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 25%;
+    height:50px;
+    border-radius: 9999px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-color: #0084FF;
+    color: white;
+}
+
+.submit-button button:hover{
+    border: solid 4px white;
+}
+
+.links{
+    width: 100%;
+    margin-top: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cadastro a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cadastro a:hover{
+    text-decoration: underline solid 2px white;
+    
+}
+
+.esqueci-senha a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.esqueci-senha a:hover{
+    text-decoration: underline solid 2px white;
+}

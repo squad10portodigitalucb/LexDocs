@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Lex Docs</title>
+
+    <!--Folhas de estilos-->
+    <link rel="stylesheet" href="Css/reset.css">
+    <link rel="stylesheet" href="Css/login_style.css">
+    
+    <!--Arquivo JS-->
+    <script src="Js/login_api.js"></script>
+
+
+    <!--CDN Font Awesome para ícones-->
+    <script src="https://kit.fontawesome.com/fa86e23414.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <section>
+            <img src="/imagens/LogoFundoTrasnparente.png" alt="logo lex docs">
+
+            <div class="formulario">
+                <form id="formLoginBtn">
+                    <div class="usuario">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" placeholder="Nome de usuario ou e-mail" name="usuario" required>
+                    </div>
+
+                    <div class="senha">
+                        <label for="senha">Senha</label>
+                        <input type="password" placeholder="Digite sua senha" name="senha" required>
+                    </div>
+
+                    <div id="btn-login" class="submit-button">
+                        <button type="submit" id="botao-entrar">Entrar</button> 
+                    </div>
+
+                    <div class="links">
+                        <span class="cadastro"><a href="/cadastro.html">Cadastre-se</a></span>
+                        <span class="esqueci-senha"><a href="/esqueci_senha1.html">Esqueci minha Senha</a></span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

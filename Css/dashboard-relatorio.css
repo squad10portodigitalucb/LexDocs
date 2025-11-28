@@ -1,0 +1,146 @@
+.container-principal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.gap-3{
+    margin-right: 150px;
+}
+
+
+.relatorio-container{
+    margin-left: 100px;
+    background-color: #aac6dd;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.relatorio-container:hover{
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+.grafico-relatorio2{
+    margin-right: 100px;
+}
+
+.grafico-relatorio:hover{
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+.grafico-relatorio2:hover{
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+.container-principal2{
+    display: flex;
+    gap: 150px;
+    margin-top: 65px;
+    flex-wrap: wrap;
+}
+
+.processo-container{
+    background-color: #aac6dd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+
+.processo-container:hover{
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+.processo-container2{
+    background-color: #aac6dd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.processo-container2:hover{
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+.processo-container2 img{
+    width: 450px;
+    height: 230px;
+}
+
+
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .container-principal{
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .relatorio-container,
+    .grafico-relatorio2 {
+        margin: 0;
+    }
+
+    .container-principal2{
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .processo-container{
+        margin-left: 0;
+    }
+
+    .processo-container2 img{
+        width: 350px;
+        height: auto;
+    }
+
+    
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+    .container-principal{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-principal2{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .relatorio-container,
+    .grafico-relatorio2,
+    .processo-container {
+        width: 90%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .processo-container2 img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .relatorio-container,
+    .grafico-relatorio2,
+    .processo-container{
+        padding: 10px;
+    }
+
+    .processo-container2 img{
+        width: 100%;
+        height: auto;
+    }
+}
